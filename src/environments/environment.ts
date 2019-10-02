@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  languageSelected: 'en'
+  languageSelected: 'en',
+  nameTokenSession: 'token_access'
 };
 
 /*

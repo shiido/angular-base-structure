@@ -11,6 +11,10 @@ import { LayoutModule } from './layouts/layout.module';
 import { HomeModule } from './sections/home/home.module';
 import { ErrorModule } from './sections/errors/error.module';
 
+// Services
+import { ErrorInterceptorService } from './services/interceptors/error-interceptor.service';
+import { SessionInterceptorService } from './services/interceptors/session-interceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,10 @@ import { ErrorModule } from './sections/errors/error.module';
     ErrorModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: SessionInterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
