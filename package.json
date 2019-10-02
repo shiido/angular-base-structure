@@ -1,6 +1,12 @@
 {
   "name": "angular-base-structure",
   "version": "1.0.0",
+  "keywords": [
+    "angular",
+    "multiple-layout",
+    "interceptors",
+    "internationalization"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
